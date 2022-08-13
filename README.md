@@ -2,7 +2,6 @@
 
 Devsbook - Projeto em OO de uma rede social.
 
-
 ## 📖 Demonstração:
 
 <div>
