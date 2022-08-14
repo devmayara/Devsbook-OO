@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 $base = 'http://localhost/GitHub/Devsbook-OO/';
 
 $db_name = 'devsbook';
