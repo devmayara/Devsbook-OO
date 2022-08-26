@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$base = 'http://localhost/GitHub/Devsbook-OO';
+$base = 'http://localhost/GitHub/Devsbook-OO/';
 
 $db_name = 'devsbook';
 $db_host = 'localhost';

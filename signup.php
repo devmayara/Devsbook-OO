@@ -10,17 +10,17 @@ require 'config.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= $base; ?>/assets/css/login.css" />
+    <link rel="stylesheet" href="<?= $base; ?>assets/css/login.css" />
     <title>Devsbook | Cadastro</title>
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="<?= $base; ?>/"><img src="<?= $base; ?>/assets/images/devsbook_logo.png" /></a>
+            <a href="<?= $base; ?>"><img src="<?= $base; ?>assets/images/devsbook_logo.png" /></a>
         </div>
     </header>
     <section class="container main">
-        <form action="<?= $base; ?>/signup_action.php" method="POST">
+        <form action="<?= $base; ?>signup_action.php" method="POST">
 
             <?php if(!empty($_SESSION['flash'])): ?>
                 <div class="flash"><?= $_SESSION['flash']; ?></div>
@@ -37,7 +37,7 @@ require 'config.php';
 
             <input class="button" type="submit" value="Fazer cadastro" />
 
-            <a href="<?= $base; ?>/login.php">Já tem conta? Faça o login.</a>
+            <a href="<?= $base; ?>login.php">Já tem conta? Faça o login.</a>
         </form>
     </section>
 

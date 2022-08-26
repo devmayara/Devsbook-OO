@@ -6,4 +6,4 @@ require 'models/Auth.php';
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
 
-echo 'Index';
+require 'partials/header.php';
