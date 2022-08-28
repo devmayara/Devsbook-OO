@@ -1,7 +1,7 @@
 <?php
 
-require 'config.php';
-require 'models/Auth.php';
+require_once 'config.php';
+require_once 'models/Auth.php';
 
 $name = filter_input(INPUT_POST, 'name');
 $birthdate = filter_input(INPUT_POST, 'birthdate');
@@ -14,14 +14,14 @@ if ($name && $birthdate && $email && $password) {
     $birthdate = explode('/', $birthdate);
     if (count($birthdate) != 3) {
         $_SESSION['flash'] = 'Data de nascimento inválida';
-        header("Location: ".$base."/signup.php");
+        header("Location: ".$base."signup.php");
         exit;
     }
 
     $birthdate = $birthdate[2].'-'. $birthdate[1].'-'. $birthdate[0];
     if (strtotime($birthdate) === false) {
         $_SESSION['flash'] = 'Data de nascimento inválida';
-        header("Location: ".$base."/signup.php");
+        header("Location: ".$base."signup.php");
         exit;
     }
 
@@ -31,11 +31,11 @@ if ($name && $birthdate && $email && $password) {
         exit;
     } else {
         $_SESSION['flash'] = 'E-mail já cadastrado';
-        header("Location: ".$base."/signup.php");
+        header("Location: ".$base."signup.php");
         exit;
     }
 }
 
 $_SESSION['flash'] = 'Campos não enviados';
-header("Location: ".$base."/signup.php");
+header("Location: ".$base."signup.php");
 exit;
