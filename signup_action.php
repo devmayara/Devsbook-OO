@@ -1,7 +1,7 @@
 <?php
 
-require 'config.php';
-require 'models/Auth.php';
+require_once 'config.php';
+require_once 'models/Auth.php';
 
 $name = filter_input(INPUT_POST, 'name');
 $birthdate = filter_input(INPUT_POST, 'birthdate');

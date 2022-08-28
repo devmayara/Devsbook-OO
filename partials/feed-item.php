@@ -1,8 +1,10 @@
 <?php
 
 require_once 'feed-item-script.php';
+// require_once 'dao/PostDaoMysql.php';
 
 $actionPhrase = '';
+
 switch($item->type) {
     case 'text':
         $actionPhrase = 'fez um post';
@@ -11,6 +13,7 @@ switch($item->type) {
         $actionPhrase = 'postou uma foto';
     break;
 }
+
 ?>
 
 <div class="box feed-item" data-id="<?=$item->id;?>">
@@ -21,7 +24,7 @@ switch($item->type) {
             </div>
             <div class="feed-item-head-info">
                 <a href="<?=$base;?>perfil.php?id=<?=$item->user->id;?>"><span class="fidi-name"><?=$item->user->name;?></span></a>
-                <span class="fidi-action"><?=$actionPhrase;?></span>
+                <span class="fidi-action"> </span>
                 <br/>
                 <span class="fidi-date"><?=date('d/m/Y', strtotime($item->created_at));?></span>
             </div>
@@ -36,14 +39,14 @@ switch($item->type) {
         </div>
         <div class="feed-item-body mt-10 m-width-20">
             <?php
-            switch($item->type) {
-                case 'text':
-                    echo nl2br($item->body);
-                break;
-                case 'photo':
-                    echo '<img src="'.$base.'/media/uploads/'.$item->body.'" />';
-                break;
-            }
+                switch($item->type) {
+                    case 'text':
+                        echo nl2br($item->body);
+                    break;
+                    case 'photo':
+                        echo '<img src="'.$base.'media/uploads/'.$item->body.'" />';
+                    break;
+                }
             ?>
         </div>
         <div class="feed-item-buttons row mt-20 m-width-20">
